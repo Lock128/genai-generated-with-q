@@ -1,5 +1,5 @@
-# These owners will be the default owners for everything in
-# the repo. Unless a later match takes precedence,
-# @username1 and @raphal will be requested for
-# review when someone opens a pull request.
-* @username1 @raphal
+# This is a CODEOWNERS file for GitHub
+# It designates code owners who are required to review and approve pull requests
+
+# Global rule - @Lock128 and @RaphaelManke are code owners for the entire repository
+* @Lock128 @RaphaelManke

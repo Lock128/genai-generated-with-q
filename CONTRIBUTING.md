@@ -1,85 +1,88 @@
-# Contributing to GenAI Generated with Q
+# Contributing to this Repository
 
-Thank you for your interest in contributing to this project! We want to make contributing to this project as easy and transparent as possible, whether it's:
-
-- Reporting a bug
-- Discussing the current state of the code
-- Submitting a fix
-- Proposing new features
-- Becoming a maintainer
-
-## Development Process
-
-We use GitHub to host code, to track issues and feature requests, as well as accept pull requests.
-
-### Pull Requests
-
-1. Fork the repository and create your branch from `main`.
-2. If you've added code that should be tested, add tests.
-3. If you've changed APIs, update the documentation.
-4. Ensure the test suite passes.
-5. Make sure your code lints.
-6. Submit your pull request!
-
-### Pull Request Process
-
-1. Update the README.md or documentation with details of changes if appropriate.
-2. You may merge the Pull Request once you have the sign-off of one of the maintainers (@username1 or @raphal).
+Thank you for your interest in contributing to our project! This document provides guidelines and instructions for contributing to this repository.
 
 ## Code of Conduct
 
-### Our Pledge
-
-In the interest of fostering an open and welcoming environment, we pledge to make participation in our project and our community a harassment-free experience for everyone.
-
-### Our Standards
-
-Examples of behavior that contributes to creating a positive environment include:
-
-* Using welcoming and inclusive language
-* Being respectful of differing viewpoints and experiences
-* Gracefully accepting constructive criticism
-* Focusing on what is best for the community
-* Showing empathy towards other community members
-
-### Our Responsibilities
-
-Project maintainers are responsible for clarifying the standards of acceptable behavior and are expected to take appropriate and fair corrective action in response to any instances of unacceptable behavior.
+By participating in this project, you agree to abide by our Code of Conduct. Please read it before contributing.
 
 ## Getting Started
 
-1. Clone the repo
+### Prerequisites
+
+- Node.js (version specified in package.json)
+- npm or yarn
+- AWS CDK knowledge
+
+### Setting Up Development Environment
+
+1. Fork the repository: https://github.com/Lock128/genai-generated-with-q
+2. Clone your fork locally:
    ```
-   git clone https://github.com/yourusername/genai-generated-with-q.git
+   git clone https://github.com/YOUR-USERNAME/genai-generated-with-q.git
+   cd genai-generated-with-q
    ```
-2. Install dependencies
+3. Install dependencies:
    ```
    npm install
    ```
-3. Run tests
+
+## Development Workflow
+
+1. Create a new branch for your feature or bug fix:
    ```
-   npm test
+   git checkout -b feature/your-feature-name
    ```
-4. Build the project
+   or
    ```
-   npm run build
+   git checkout -b fix/your-bug-fix
    ```
 
-## Reporting Bugs
+2. Make your changes and commit using meaningful commit messages:
+   ```
+   git commit -m "Add feature: your feature description"
+   ```
 
-Report bugs using GitHub's [issue tracker](../../issues).
+3. Push your branch to your fork:
+   ```
+   git push origin feature/your-feature-name
+   ```
 
-When filing an issue, make sure to answer these questions:
+4. Create a Pull Request against the `main` branch of the original repository.
 
-1. What version of the project are you using?
-2. What did you do?
-3. What did you expect to see?
-4. What did you see instead?
+## Pull Request Guidelines
+
+- Ensure your code follows the project's coding standards
+- Include tests for new features or bug fixes
+- Update documentation as needed
+- Make sure all tests pass locally before submitting
+- Reference any relevant issues in your PR description using keywords like "Fixes #123" or "Resolves #456"
+
+## Code Review Process
+
+All submissions require review. Pull Requests require approval from at least one of the repository owners (@Lock128 or @RaphaelManke) before being merged.
+
+## Testing
+
+- Run existing tests with `npm test`
+- Add new tests for new functionality
+
+## Documentation
+
+Please update relevant documentation when changing code:
+- Update README.md for user-facing changes
+- Update inline code comments for technical details
+
+## Versioning
+
+This project follows [Semantic Versioning](https://semver.org/).
 
 ## License
 
 By contributing, you agree that your contributions will be licensed under the project's license.
 
-## References
+## Questions or Need Help?
 
-This document was adapted from open-source contribution guidelines templates.
+Feel free to open an issue with any questions or if you need assistance.
+
+Thank you for contributing to our project!

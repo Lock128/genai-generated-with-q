@@ -1,40 +1,36 @@
-# Activating CODEOWNERS in GitHub
+# Setting Up CODEOWNERS in GitHub
 
-To ensure the CODEOWNERS file is properly enforced in GitHub, follow these steps:
+To activate and leverage the CODEOWNERS file in GitHub, follow these steps:
 
-## 1. Configure Branch Protection Rules
+## 1. Repository Settings
 
-1. Go to your GitHub repository
-2. Click on "Settings" tab
+1. Go to your repository on GitHub: https://github.com/Lock128/genai-generated-with-q
+2. Click on "Settings" (requires admin privileges)
 3. Navigate to "Branches" in the left sidebar
 4. Under "Branch protection rules", click "Add rule"
-5. In the "Branch name pattern" field, enter `main` (or your default branch name)
-6. Check the following options:
-   - "Require pull request reviews before merging"
-   - "Require review from Code Owners"
-   - "Include administrators" (optional, but recommended)
-7. Set "Required approving reviews" to at least 1
-8. Click "Create" or "Save changes"
 
-## 2. Verify CODEOWNERS File Location
+## 2. Configure Branch Protection
 
-Ensure your CODEOWNERS file is in one of these locations:
-- In the root directory (already done)
-- In the `.github/` directory
-- In the `docs/` directory
+For your main branch (likely `main` or `master`):
 
-## 3. Testing the Setup
+1. Enter the branch name pattern (e.g., `main`)
+2. Check "Require pull request reviews before merging"
+3. Set "Required approving reviews" to 1
+4. Check "Require review from Code Owners"
+5. Optionally, configure additional protections as needed:
+   - Require status checks to pass before merging
+   - Require branches to be up to date before merging
+   - Include administrators (applies rules to admins as well)
 
-1. Create a test branch and make a small change
-2. Submit a pull request to the protected branch
-3. Verify that GitHub automatically requests reviews from the code owners (@username1 and @raphal)
-4. Confirm that the PR cannot be merged until approved by at least one code owner
+## 3. Save Your Changes
 
-## Additional Notes
+Click "Create" or "Save changes" to apply these settings.
 
-- The CODEOWNERS file follows a pattern similar to gitignore files
-- Each line is a file pattern followed by one or more owners
-- Order is important; the last matching pattern takes precedence
-- GitHub Enterprise may have slightly different UI options
+## 4. Verification
 
-For more information, see [GitHub's documentation on CODEOWNERS](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners).
+After setting up, GitHub will automatically:
+- Identify the code owners for files changed in a PR
+- Request reviews from those owners
+- Prevent merging until required reviews are obtained
+
+The CODEOWNERS file is now active and will be used by GitHub to enforce review requirements.
