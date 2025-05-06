@@ -10,7 +10,7 @@ describe('GenaiGeneratedWithQStack', () => {
   test('API Gateway and Lambda Resources Created', () => {
     // Verify API Gateway is created
     template.resourceCountIs('AWS::ApiGateway::RestApi', 1);
-    template.resourceCountIs('AWS::ApiGateway::Method', 1);
+    template.resourceCountIs('AWS::ApiGateway::Method', 3);
     template.resourceCountIs('AWS::ApiGateway::Resource', 1);
     
     // Verify Lambda function is created
@@ -20,24 +20,36 @@ describe('GenaiGeneratedWithQStack', () => {
     template.hasResourceProperties('AWS::ApiGateway::Method', {
       HttpMethod: 'GET',
       ResourceId: {
-        Ref: expect.stringMatching(/^EventsApi.*/)
+        Ref: "EventsApieventsA45FE214"
       },
       RestApiId: {
-        Ref: expect.stringMatching(/^EventsApi.*/)
+        Ref: "EventsApiBA8771C4"
       },
       Integration: {
         IntegrationHttpMethod: 'POST',
         Type: 'AWS_PROXY',
-        Uri: {
-          'Fn::Join': expect.arrayContaining([
-            expect.anything(),
-            expect.objectContaining({
-              'Fn::GetAtt': expect.arrayContaining([
-                expect.stringMatching(/^EventsHandler.*/),
-                'Arn'
-              ])
-            })
-          ])
+        Uri:{
+          "Fn::Join": [
+            "",
+            [
+              "arn:",
+              {
+                Ref: "AWS::Partition",
+              },
+              ":apigateway:",
+              {
+                Ref: "AWS::Region",
+              },
+              ":lambda:path/2015-03-31/functions/",
+              {
+                "Fn::GetAtt": [
+                  "EventsHandler8B5D6941",
+                  "Arn",
+                ],
+              },
+              "/invocations",
+            ],
+          ],
         }
       }
     });

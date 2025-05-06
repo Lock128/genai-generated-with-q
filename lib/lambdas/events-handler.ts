@@ -32,6 +32,7 @@ const mockEvents = [
  */
 export const handler = async (event: APIGatewayProxyEvent): Promise<APIGatewayProxyResult> => {
   try {
+    const requestBody = event.body ? JSON.parse(event.body) : null;
     // For now, we're returning mock data as specified in the requirements
     // In the future, this would be replaced with actual database queries
     return {
